@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Find the start and end column for the answer key (F to AD)
             const answerKeyStartCol = headers.indexOf('F') !== -1 ? headers.indexOf('F') : 5; // Assuming E is 6th column, index 5
-            const answerKeyEndCol = headers.indexOf('AD') !== -1 ? headers.indexOf('AD') : 30; // Assuming AR is 30th column, index 29
+            const answerKeyEndCol = headers.indexOf('AD') !== -1 ? headers.indexOf('AD') : 29; // Assuming AR is 30th column, index 29
 
             // The answer key is in row 2 (index 1) in the specified columns
             answerKey = sheetData[1].c.slice(answerKeyStartCol, answerKeyEndCol + 1).map(cell => cell && cell.v ? cell.v : '');
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Assuming student's answers start from column F (index 5)
         // and go up to column AD (index 29), same as the answer key
-        const studentAnswers = studentRow.c.slice(5, 30).map(cell => cell && cell.v ? cell.v : '');
+        const studentAnswers = studentRow.c.slice(5, 29).map(cell => cell && cell.v ? cell.v : '');
 
         for (let i = 0; i < answerKey.length; i++) {
             const row = document.createElement('tr');
