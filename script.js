@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Assuming student's answers start from column F (index 5)
         // and go up to column AD (index 29), same as the answer key
-        const studentAnswers = studentRow.c.slice(5, 29).map(cell => cell && cell.v ? cell.v : '');
+        const studentAnswers = studentRow.c.slice(5, 30).map(cell => cell && cell.v ? cell.v : '');
 
         for (let i = 0; i < answerKey.length; i++) {
             const row = document.createElement('tr');
