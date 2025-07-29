@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear previous answers
         answerTableBody.innerHTML = '';
 
-        // Assuming student's answers start from column E (index 4)
-        // and go up to column AR (index 44), same as the answer key
-        const studentAnswers = studentRow.c.slice(4, 45).map(cell => cell && cell.v ? cell.v : '');
+        // Assuming student's answers start from column F (index 5)
+        // and go up to column AD (index 29), same as the answer key
+        const studentAnswers = studentRow.c.slice(5, 29).map(cell => cell && cell.v ? cell.v : '');
 
         for (let i = 0; i < answerKey.length; i++) {
             const row = document.createElement('tr');
