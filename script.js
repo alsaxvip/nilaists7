@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const SPREADSHEET_ID = '1P7ppsieVzXcbpNfqI0X_obSCpN3fUJIe9AEHIKmaJFo';
-    const SHEET_NAME = 'AT7';
+    const SPREADSHEET_ID = '1EwK-Co9glsswvy9pQpWeLxq8QXGt5SUaQOYekQ4rTJE';
+    const SHEET_NAME = 'TS7';
     const GOOGLE_SHEETS_API_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
 
     const loginSection = document.getElementById('login-section');
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const namaLengkapSpan = document.getElementById('nama-lengkap');
     const nisnSpan = document.getElementById('nisn');
     const kelasSpan = document.getElementById('kelas');
+    const rankSpan = document.getElementById('rank');
     const nilaiSpan = document.getElementById('nilai');
     const answerTableBody = document.getElementById('answer-table-body');
 
@@ -59,17 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Column A = NAMA LENGKAP (index 0)
         // Column B = NISN (index 1)
         // Column C = KELAS (index 2)
-        // Column D = NILAI (index 3)
+        // Column D = RANK (index 3)
+        // Column E = NILAI (index 4)
         // Adjust these indices as per your sheet's column order.
         const namaLengkap = studentRow.c[0] ? studentRow.c[0].v : 'N/A';
         const nisn = studentRow.c[1] ? studentRow.c[1].v : 'N/A';
         const kelas = studentRow.c[2] ? studentRow.c[2].v : 'N/A';
-        const nilaiRaw = studentRow.c[3] ? studentRow.c[3].v : 0;
+        const rank = studentRow.c[3] ? studentRow.c[3].v : 'N/A';
+        const nilaiRaw = studentRow.c[4] ? studentRow.c[4].v : 0;
         const nilai = Math.round(nilaiRaw); // Round to the nearest whole number
 
         namaLengkapSpan.textContent = namaLengkap;
         nisnSpan.textContent = nisn;
         kelasSpan.textContent = kelas;
+        rankSpan.textContent = rank;
         nilaiSpan.textContent = nilai;
 
         // Clear previous answers
